@@ -3,7 +3,7 @@ package se.lexicon;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class WorkshopArray {
+public class WorkshopArray2d {
     // This is the array, 10 rows x 3 columns
     public static String[][] names = new String[10][3];
     public static int currentIndex = 0; // Counter to prompt message if too many names are added
@@ -20,7 +20,7 @@ public class WorkshopArray {
 
         // The user will have to enter a name to add
         System.out.println("Method: 'add'");
-        add(add());
+        add("Anders Loren");
 
         // There's no need for a parameter for findByFirstName since it will return an array of all the firstnames with no regard to the argument
         System.out.println("Method 2: findByFirstName");
@@ -53,9 +53,9 @@ public class WorkshopArray {
             String[] nameSplit = split(fullName);
             for (String[] name : names) {
                 if (name[0].equalsIgnoreCase(nameSplit[0]) && name[2].equalsIgnoreCase(nameSplit[2])) {
-                    name[0] = "";
-                    name[1] = "";
-                    name[2] = "";
+                    name[0] = null;
+                    name[1] = null;
+                    name[2] = null;
                     break;
                 }
             }
@@ -107,11 +107,6 @@ public class WorkshopArray {
             }
         }
         return null;
-    }
-    public static String add() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Skriv in ett namn (Förnamn Efternamn): ");
-        return scanner.nextLine();
     }
     public static boolean add(final String fullName) {
         if (find(fullName) != null) {
