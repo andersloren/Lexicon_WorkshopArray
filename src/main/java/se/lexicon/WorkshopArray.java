@@ -1,5 +1,6 @@
 package se.lexicon;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class WorkshopArray {
@@ -13,30 +14,30 @@ public class WorkshopArray {
         names[0][1] = " ";
         names[0][2] = "Svensson";
 
-//        // The method returns the name provided as an argument if it's in the array, otherwise it returns null
-//        System.out.println("Method: find");
-//        System.out.println(find("Erik Svensson"));
+        // The method returns the name provided as an argument if it's in the array, otherwise it returns null
+        System.out.println("Method: find");
+        System.out.println(find("Erik Svensson"));
 
-//        // The user will have to enter a name to add
-//        System.out.println("Method: 'add'");
-//        add(add());
+        // The user will have to enter a name to add
+        System.out.println("Method: 'add'");
+        add(add());
 
-//        // There's no need for a parameter for findByFirstName since it will return an array of all the firstnames with no regard to the argument
-//        System.out.println("Method 2: findByFirstName");
-//        for (String name : findByFirstName("argument")) {
-//            System.out.println(name);
-//        }
+        // There's no need for a parameter for findByFirstName since it will return an array of all the firstnames with no regard to the argument
+        System.out.println("Method 2: findByFirstName");
+        for (String name : findByFirstName("argument")) {
+            System.out.println(name);
+        }
 
-//        // There's no need for a parameter for findByLastName since it will return an array of all the lastnames with no regard to the argument
-//        System.out.println("findByLastName");
-//        for (String name : findByLastName("argument")) {
-//            System.out.println(name);
-//        }
+        // There's no need for a parameter for findByLastName since it will return an array of all the lastnames with no regard to the argument
+        System.out.println("findByLastName");
+        for (String name : findByLastName("argument")) {
+            System.out.println(name);
+        }
 
-//        // The names are hardcoded, Anders Loren will swap place with Erik Svensson
-//        if (update("Erik Svensson", "Anders Loren")) {
-//            printArray();
-//        }
+        // The names are hardcoded, Anders Loren will swap place with Erik Svensson
+        if (update("Erik Svensson", "Anders Loren")) {
+            printArray();
+        }
 
         // ["Erik", " ", "Svensson"] will get replaced with [null, null, null]
         printArray();
@@ -46,7 +47,7 @@ public class WorkshopArray {
         }
     }
     public static boolean remove(final String fullName) {
-        if (find(fullName) != fullName) {
+        if (!Objects.equals(find(fullName), fullName)) {
             return false;
         } else {
             String[] nameSplit = split(fullName);
